@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-light: #f8f9fa;
+    --background-white: #ffffff;
+    --text-dark: #343a40;
+    --text-light: #f8f9fa;
+    --header-footer-bg: #343a40;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Lato', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--header-footer-bg);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2em 1em;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    margin: 0 0 0.2em 0;
+    color: var(--text-light);
+}
+
+header p {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--secondary-color);
+}
+
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--background-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+h2 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 1.5em;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5em;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.project {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.project:last-child {
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project h3 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: darken(var(--primary-color), 10%);
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--header-footer-bg);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.5em 1em;
+    margin-top: auto;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+    color: var(--secondary-color);
+}
+
+footer a {
+    color: var(--text-light);
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+#pagination-controls {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+#pagination-controls button {
+    background-color: var(--background-white);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-family: var(--body-font);
+}
+
+#pagination-controls button:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    color: var(--background-white);
+}
+
+#pagination-controls button:disabled {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#pagination-controls button.active {
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    cursor: default;
+}
+
+@media (max-width: 768px) {
+    main {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+
+    header,
+    footer {
+        padding: 1.5em 1em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
